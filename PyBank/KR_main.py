@@ -26,11 +26,12 @@ with open(file_to_load,encoding='UTF-8') as financial_data:
     header = next(reader)
     print(header)#check to confirm csv is being read 
 
+
     # Process each row of data
     for row in reader:
         total_months +=1 #Track total months
-        first_row=int(row[1])
-        total_net += first_row# Track the total
+        first_row = int(row[1])
+        total_net += first_row # Track the total
 
         # Calculate the greatest increase in profits (month and amount)
         if first_row > great_increase:
@@ -42,30 +43,7 @@ with open(file_to_load,encoding='UTF-8') as financial_data:
             great_decrease = int(row[1])
             great_decrease_date = (row[0])
 
-                
-# Extract first row to avoid appending to net_change_list    
-#data=list(reader)  
-#first_row = int(data[0][1]) 
-#net_change_list=[]
-
-    # Check if the first row has enough elements
-#if len(data) > 0 and len(data[0]) > 1:
-    #first_row = int(data[0][1])
-#else:
-    print("Error: First row does not have enough elements.")
-    first_row = 0  
-
-# Track the total and net change
-    #for index in range(1, len(data)):
-       # net_change = int(data[index][1]) - first_row
-
-    print(f'Net Change: (${net_change})')
-
-# Track the net change, average
-
-# Calculate the average net change across the months
-
-
+        
 # Generate the output summary
     header = 'Financial Analysis'
     subheader = '---------------------'
@@ -74,7 +52,7 @@ with open(file_to_load,encoding='UTF-8') as financial_data:
     print(header)
     print(f'Total Months:{total_months}')  
     print(f'Total Net:(${total_net})')
-    #print(f'Average Change:(${net_change})')
+    print(f'Average Change:(${net_change})')
     print(f'Greatest Increase:{great_increase_date} (${great_increase})')
     print(f'Greatest Decrease:{great_decrease_date} (${great_decrease})')
 
