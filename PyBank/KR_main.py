@@ -4,8 +4,8 @@ import csv
 import os
 
 # Files to load and output (update with correct file paths)
-file_to_load = os.path.join(r"C:\Users\katro\python-challenge\PyBank\Resources", "budget_data.csv")# Input file path
-file_to_output = os.path.join(r"C:\Users\katro\python-challenge\PyBank\analysis", "budget_.txt")# Output file path
+file_to_load = os.path.join("Resources", "budget_data.csv")# Input file path
+file_to_output = os.path.join("analysis", "budget_.txt")# Output file path
 
 # Define variables to track the financial data
 total_months = 0
